@@ -26,7 +26,7 @@ public class CursoController {
     }
 
     @PostMapping(value="curso", consumes=MediaType.APPLICATION_JSON_VALUE)
-    public void guardar(Curso curso){
+    public void guardar(@RequestBody Curso curso){
         service.altaCurso(curso);
     }
 
@@ -42,7 +42,7 @@ public class CursoController {
     }
 
     @GetMapping(value="curso/{precioMin}/{precioMax}" , produces=MediaType.APPLICATION_JSON_VALUE)
-    public List<Curso> precio(@PathVariable("precioMin") int precioMin, @PathVariable("precioMax") int precioMax){
+    public List<Curso> precio(@PathVariable("precioMin") double precioMin, @PathVariable("precioMax") double precioMax){
         return service.getPreciosInBetween(precioMin, precioMax);
     }
 

@@ -14,5 +14,5 @@ public interface CursoService {
     
     Curso buscarCurso(int codCurso);
 
-    List<Curso> getPreciosInBetween(int priceMin, int priceMax);
+    List<Curso> getPreciosInBetween(double priceMin, double priceMax);
 }

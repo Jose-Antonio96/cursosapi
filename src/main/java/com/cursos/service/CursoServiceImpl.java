@@ -25,8 +25,8 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public List <Curso> eliminarCurso(int curso_id){
-        repository.deleteById(curso_id);
+    public List <Curso> eliminarCurso(int codCurso){
+        repository.deleteById(codCurso);
         return repository.findAll();
     }
 
@@ -45,7 +45,7 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public List<Curso> getPreciosInBetween(int priceMin, int priceMax){
+    public List<Curso> getPreciosInBetween(double priceMin, double priceMax){
         return repository.getPreciosBetween(priceMin, priceMax);
     }
 }
